@@ -1,6 +1,14 @@
+#class files #
 *.class
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+#general files #
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
