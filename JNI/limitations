@@ -1,0 +1,15 @@
+la ontologia tiene una serie de quisquillosidades para poder ser consultada sin ningun error. 
+
+primero la ontologia si bien tiene que ser un .owl el archivo debe estar escrito con una estructura rdf/xml. ya que Jena no soporta owl/xml que es el elnguaje que nativamente usa protege para exportar ontologias.
+
+los simbolos de mayor y menor en las condiciones de las propiedades activas deben ser indicados por su simbolo html < (&lt;) > (&gt;)
+
+no habran nodos blancos, y el rdfs about y el id serán excluyentes
+
+¿Debo poner restricciones a la estructura?
+
+todas las propiedades serán pasadas como Strings, si bien MIOA permite tenerlas como Strings, Booleanos o Numericos
+
+en practica es un solo evento por propiedad,
+despues de esto lo que se hace es que los complex se añaden con la funcion agregar_expresion, funcion crear_evento en OA.h
+es la que son puros Strings.

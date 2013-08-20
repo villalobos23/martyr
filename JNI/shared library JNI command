@@ -1,0 +1,21 @@
+at this point you need, 
+	1. the compiled .java file, in my case i had to hardcode the library because i couldnt configure java.library.path
+	2. the .h file resulting from using the javah command
+	3. the .c/.cpp implementing the .h 
+
+the javah command should be something like: 
+
+	javah -classpath ../bin javapart.HelloJNI
+	
+	Note if new methods are to be added remember to add them to the header file and the implementation (.h and .cpp)
+
+the command to create the .so is like:
+
+	g++ -fPIC -I/usr/lib/jvm/java-6-openjdk/include/ -I /usr/lib/jvm/java-6-openjdk/include/linux Sample1.cpp -shared -o libSample1.so
+
+Note: it might be necessary under some cases that when the shared library command is issued the libraries must be also indicated so that the .so is packaged with everything it needs, in this case the flags and arguments passed to use OA.h are:
+
+
+	g++ -L/usr/local/lib -lkyotocabinet -fPIC -I/usr/lib/jvm/java-6-openjdk/include/ -I /usr/lib/jvm/java-6-openjdk/include/linux struct_martyr_Ontology.cpp -shared -o libmioa.so
+
+
